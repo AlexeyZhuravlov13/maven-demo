@@ -1,5 +1,11 @@
 package org.example;
 
+
+import org.apache.commons.lang3.math.NumberUtils;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /*
 
 ✅Задание:
@@ -9,6 +15,7 @@ package org.example;
 - Настрой Maven для компиляции и упаковки проекта в JAR файл.
 - Создай класс "Main", который использует апи из подключенных библиотек.
 - Включи BOM для управления версиями зависимостей в проекте.
+
 - Проверь транзитивные зависимости проекта.
 
 После выполнения задания ответь на следующие вопросы:
@@ -22,8 +29,11 @@ package org.example;
 https://maven.apache.org/guides/plugin/guide-java-plugin-development.html
  */
 public class Main {
-    public static void main(String[] args) {
 
-        }
+    private static Logger logger = LogManager.getLogger(Main.class);
+
+    public static void main(String[] args) {
+        logger.log(Level.INFO, "---------------------------------> TEST");
+        logger.log(Level.INFO, NumberUtils.compare(1, 2));
     }
 }
